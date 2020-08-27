@@ -9,14 +9,14 @@ def start():
     qrup = input("Qrup adini yazin: ")
     ad = input("Adinizi qeyd edin: ")
     soyad = input("Soyadinizi qeyd edin: ")
-    daxil_olanlari_qeyd_et=open("json_istifadeci_bazasi.json","a")
-    json_data = {"istifadeciler":[
-                   {
-                       "group": qrup,
-                       "name": ad,
-                       "surname": soyad
-                   }
-               ]}
+    daxil_olanlari_qeyd_et = open("json_istifadeci_bazasi.json", "a")
+    json_data = {"istifadeciler": [
+        {
+            "group": qrup,
+            "name": ad,
+            "surname": soyad
+        }
+    ]}
     daxil_olanlari_qeyd_et.write(json.dumps(json_data))
     User(qrup, ad, soyad).show()
     daxil_olanlari_qeyd_et.close()
